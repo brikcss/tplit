@@ -5,14 +5,14 @@ node_js: "8"
 
 cache:
   bundler: true
-  # directories:
-  #   - node_modules
+  directories:
+    - node_modules
 
 notifications:
   email:
     on_failure: always
 
-env: NODE_ENV=production
+env: NODE_ENV=test
 
 # Publish to NPM only.
 before_script: npm prune -d
