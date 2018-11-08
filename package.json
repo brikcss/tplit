@@ -33,7 +33,7 @@
     "prebuild": "npx rimraf ./esm ./lib ./umd ./browser",
     "build": "rollup --config=.rolluprc.js",
     "pretest": "npm run build",
-    "test": "standard *.js && jest --coverage && cat coverage/lcov.info >(codacy-coverage) | coveralls",
+    "test": "standard *.js && jest --coverage && cat coverage/lcov.info | coveralls && cat coverage/lcov.info | codacy-coverage",
     "unit": "jest",
     "watch": "jest --watch"
   },
