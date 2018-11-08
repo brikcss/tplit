@@ -1,0 +1,20 @@
+#! .gitignore | @author brikcss <https://github.com/brikcss> | @reference https://git-scm.com/docs/gitignore #
+
+# Node
+/node_modules/
+
+# MacOS
+.DS_Store
+
+# Test results
+/.nyc_output/
+/coverage/
+
+# Build files
+/lib/
+/bin/
+/esm/
+/umd/
+/browser/
+/.temp/
+/.shots/current/
