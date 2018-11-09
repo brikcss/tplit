@@ -1,6 +1,6 @@
 {
   "name": "@brikcss/tplit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple, small, fast, all-purpose templating engine using the power and flexibility of native JavaScript template literals.",
   "keywords": [
     "brikcss",

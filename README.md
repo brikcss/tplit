@@ -44,21 +44,46 @@ npm i -D @brikcss/tplit
 
 There are two ways to use tplit, each has their pros and cons:
 
-1. Pass a string (most flexible):
+1. Pass a string with `tplit()`:
+
+   _Pros_: Most flexible, most configuration options.<br>
+   _Cons_: Can not use outside scope / context (though you can pass your own context data object).
+
+   _Syntax_:
+
+   ```js
+   tplit((template = ""), (options = {}))((context = {}));
+   ```
+
+   _Example_:
 
    ```js
    import tplit from "@brikcss/tplit";
-   // Syntax: tplit(template = '', options = {})(context = {})
-   tplit("Hello ${this.name}")({ name: "World" });
+   const compiled = tplit("Hello ${this.name}")({ name: "World" });
+   const compiledWithOptions = tplit("Hello ${this.name}", {
+     prop: "props",
+     map: value => value.toUpperCase()
+   })({ name: "World" });
    // console.log(compiled) => 'Hello World'
+   // console.log(compiledWithOptions) => 'Hello WORLD'
    ```
 
-2. Call with template literal function (least flexible but allows outside context):
+2. Call with template literal function with `tplitReduce()`:
+
+   _Pros_: Can use outside scope / context.<br>
+   _Cons_: Fewer configuration options.
+
+   _Syntax_:
+
+   ```js
+   tplitReduce((map = arg => arg))`My template string`;
+   ```
+
+   _Example_:
 
    ```js
    import { tplitReduce } from "@brikcss/tplit";
    const name = "World";
-   // Syntax: tplitReduce((map = arg => arg))`Hello ${name}`;
    const compiled = tplitReduce(
      (map = arg => arg.toUpperCase())
    )`Hello ${name}`;
@@ -67,10 +92,10 @@ There are two ways to use tplit, each has their pros and cons:
 
 ## Options
 
-- `prop` {`String`} (`this`): Property to use for context Object. _Note: Not available when calling tplit as a template literal._
-- `split` {`Boolean`} (`false`): Whether to split the template and return an Array of `[chunks, ...values]`. This would allow you to further manipulate the template as desired. _Note: Not available when calling tplit as a template literal._
+- `prop` {`String`} (`this`): Property to use for context Object. _Note: Not available with default `tplit()` method._
+- `split` {`Boolean`} (`false`): Set true to split the template and return an Array of `[chunks, ...values]`. This would allow you to pass to other functions and further manipulate the template as desired. _Note: Not available with default `tplit()` method._
 - `map` {`Function`} (`(value, key, context) => value`): Function to manipulate template values. This would allow you to, for example, sanitize HTML or otherwise manipulate context values.
 
 ## Examples
 
-For examples, see the [tests](tplit.test.js).
+For more examples, see the [tests](./src/tplit.test.js).
