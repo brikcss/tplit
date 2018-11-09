@@ -1,6 +1,6 @@
 {
   "name": "@brikcss/tplit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple, small, fast, all-purpose templating engine using the power and flexibility of native JavaScript template literals.",
   "keywords": [
     "brikcss",
@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "author": "Brikcss <https://github.com/brikcss>",
-  "contributors": ["The Zimmee <thezimmee@gmail.com>"],
+  "contributors": ["Zimmee <thezimmee@gmail.com>"],
   "homepage": "https://github.com/brikcss/tplit",
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
   },
   "files": ["lib", "esm", "browser", "src"],
   "main": "./lib/tplit.min.js",
-  "bin": "./bin/tplit.min.js",
   "module": "./esm/tplit.min.js",
   "browser": "./browser/tplit.min.js",
   "publishConfig": {

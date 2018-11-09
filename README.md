@@ -99,3 +99,12 @@ There are two ways to use tplit, each has their pros and cons:
 ## Examples
 
 For more examples, see the [tests](./src/tplit.test.js).
+
+<!-- ## References
+
+- https://github.com/drulac/template-literal
+- https://github.com/tunnckoCore/gana-compile
+- https://github.com/tunnckoCore/es6-template
+- https://github.com/bredele/intertag
+- https://github.com/bredele/tag-reduce
+- https://github.com/steelbrain/tagged-template-literals -->
