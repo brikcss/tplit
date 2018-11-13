@@ -97,3 +97,10 @@ test('Compile with partial and flat data', () => {
 test.skip('???Compile with YAML???', () => {})
 
 test.skip('???Compile with reusable helper functions???', () => {})
+
+// Edge cases.
+
+test('Compile "Invalid or unexpected token" edge case', () => {
+  // eslint-disable-next-line no-template-curly-in-string
+  expect(tplit('${4 + 4}')()).toBe('8')
+})

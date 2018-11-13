@@ -22,7 +22,7 @@ function include (filepath, options = {}) {
  * @return  {Function}  Compile function.
  */
 function tplit (template, { prop = 'this', map = undefined, split = false } = {}) {
-  return (context = this) => {
+  return (context = this || {}) => {
     const cache = {}
 
     // Attach include function to context.
