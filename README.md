@@ -1,5 +1,7 @@
 # Tplit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brikcss/tplit.svg)](https://greenkeeper.io/)
+
 A simple, small, fast, all-purpose templating engine using the power and flexibility of native JavaScript template literals.
 
 <!-- Shields. -->
